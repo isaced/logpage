@@ -17,13 +17,13 @@ You can simply create an `index.html` and include `logpage` there:
 </head>
 
 <body>
-  <div id="app"></div>
-  <script src="https://unpkg.com/logpage"></script>
-  <script>
-    new LogPage({
-      target: document.getElementById('app')
-    });
-  </script>
+    <div id="app"></div>
+    <script type="module">
+        import LogPage from 'https://unpkg.com/logpage';
+        new LogPage({
+            target: document.getElementById('app')
+        });
+    </script>
 </body>
 
 </html>
