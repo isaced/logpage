@@ -1,5 +1,4 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,58 +13,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -76,5 +23,160 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+body {
+  margin: 0;
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  color: #47525d;
+}
+
+.container {
+  max-width: 560px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.logpage-loading {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #b1b0b0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.loading-spin {
+  border: 0.5rem solid #f3f3f3;
+  border-top: 0.5rem solid gainsboro;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logpage-header {
+  border-bottom: 1px solid #f3f3f3;
+  padding: 1rem 0;
+}
+
+.logpage-header .logpage-title {
+  font-weight: 300;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.logpage-header .logpage-title a {
+  color: #47525d;
+  text-decoration: none;
+}
+
+.logpage-header .logpage-title a:hover {
+  text-decoration: underline;
+}
+
+.logpage-header .logpage-title a strong {
+  font-weight: 500;
+}
+
+.logpage-header .logpage-website a {
+  color: rgba(71, 82, 93, 0.35);
+  text-decoration: none;
+}
+
+.logpage-header .logpage-website a:hover {
+  text-decoration: underline;
+}
+
+.logpage-body {
+  padding: 3rem 0 5rem;
+}
+
+.logpage-body,
+.logpage-body .container {
+  position: relative;
+}
+
+.logpage-body .logpage-sep {
+  margin-top: 30px;
+}
+
+.logpage-body h1 {
+  margin: 0;
+  border-bottom: none;
+}
+
+.logpage-body ol,
+.logpage-body ul {
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+.logpage-body h2 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.logpage-body .logpage-logtitle {
+  margin-top: 50px;
+  position: relative;
+}
+
+.logpage-body .logpage-logtitle:not(:first-child) {
+  border-top: 1px solid #f3f3f3;
+  padding-top: 40px;
+}
+
+.logpage-body .logpage-logtitle:not(:first-child) .logpage-date {
+  margin-top: 66px;
+}
+
+.logpage-body .logpage-logtitle .logpage-date {
+  font-size: 13px;
+  color: rgba(71, 82, 93, 0.4);
+}
+
+.logpage-body .logpage-h3 {
+  margin-top: 0;
+  color: #fff;
+  float: left;
+  font-weight: 300;
+  padding: 3px 12px;
+  font-size: 12px;
+  border-radius: 33px;
+}
+
+@media screen and (min-width: 768px) {
+  .logpage-logtitle .logpage-date {
+    position: absolute;
+    left: -130px;
+    top: 2px;
   }
 }

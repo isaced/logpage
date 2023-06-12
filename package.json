@@ -1,8 +1,19 @@
 {
   "name": "logpage",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "main": "dist/logpage.js",
+  "module": "dist/logpage.js",
+  "exports": {
+    ".": {
+      "require": "./logpage.umd.cjs",
+      "import": "./logpage.js"
+    }
+  },
+  "style": "dist/style.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,5 +28,12 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "github-markdown-css": "^5.2.0",
+    "marked3": "^0.5.2",
+    "md": "^0.6.0",
+    "yaml": "^2.3.1"
   }
 }
