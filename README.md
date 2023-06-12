@@ -1,47 +1,113 @@
-# Svelte + TS + Vite
+# LogPage [![NPM version](https://img.shields.io/npm/v/logpage.svg?style=flat)](https://npmjs.com/package/logpage) [![NPM downloads](https://img.shields.io/npm/dm/logpage.svg?style=flat)](https://npmjs.com/package/loglive)
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+Helps you quickly deploy a live updated Changelog page based on a `CHANGELOG.md` file, inspired by [headwayapp.co](https://headwayapp.co/), [LogLive](https://github.com/egoist/loglive).
 
-## Recommended IDE Setup
+<img src="https://i.loli.net/2017/07/27/597995184bb02.png" width="800" alt="preview">
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Usage
 
-## Need an official Svelte framework?
+You can simply create an `index.html` and include `logpage` there:
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+```html
+<html>
 
-## Technical considerations
+<head>
+    <title>LogPage Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/logpage/dist/style.css" />
+</head>
 
-**Why use this over SvelteKit?**
+<body>
+  <div id="app"></div>
+  <script src="https://unpkg.com/logpage"></script>
+  <script>
+    new LogPage({
+      target: document.getElementById('app')
+    });
+  </script>
+</body>
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+</html>
+```
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Then you can start to write a `CHANGELOG.md`, by default LogPage will read from `http://your-website/CHANGELOG.md`, however you can use a custom path:
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+```
+new LogPage({
+  target: document.getElementById('app'),
+  props: {}
+});
+```
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+## Changelog Format
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+### Example
 
-**Why include `.vscode/extensions.json`?**
+```md
+# My Website
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## Add TypeScript support (2016-07-23)
 
-**Why enable `allowJs` in the TS template?**
+### New
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+- Now added Typescript support.
+- Some other new stuffs.
 
-**Why is HMR not preserving my local component state?**
+### Fix
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+Fixed some babel problems.
+```
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+### Site name
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+The value of `h1` heading will be used as website name:
+
+```md
+# My Website
+```
+
+### Changelog Title
+
+Changelog title is an `h2` heading which consists of two parts, `title` and `date` and `date` is totally optional.
+
+```md
+## changelog title (date)
+```
+
+Sometime you just want to use semantic version as the changelog title:
+
+```md
+## 1.0.0 (2023-06-12)
+```
+
+### Change Type
+
+Change type is an `h3` heading which describes the type of the change, eg: `Fix`. And it shows up like:
+
+<img src="https://i.loli.net/2017/07/27/59797da5a89df.png" alt="change type" width="60">
+
+By default we have pre-defined colors for specific types which include: `Fix` `Breaking` `New`, other types will get a random color.
+
+You can also set color for custom change type:
+
+```js
+new LogPage({
+    target: document.getElementById('app'),
+    props: {
+        colors: {
+            'Bug fixes': '#342343'
+        }
+    }
+});
+```
+
+## Front Matters
+
+### website
+
+You changelog is born for your product, so adding a link to your actual product is necessary:
+
+```md
+---
+website: http://my-fantastic-app.com
+---
 ```
