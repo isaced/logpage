@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://unpkg.com/logpage/dist/style.css" />
     <title>LogPage Example</title>
+    <style>
+        /* Add CSS direct output to avoid white screen flashing */
+        :root {
+            color-scheme: light dark;
+            background-color: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                background-color: #242424;
+            }
+        }
+    </style>
 </head>
 
 <body>

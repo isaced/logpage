@@ -3,8 +3,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #213547;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,24 +13,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 body {
   margin: 0;
   font: 14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
-  color: #47525d;
 }
 
 .container {
@@ -81,6 +67,9 @@ body {
   }
 }
 
+.markdown-body {
+  background: none;
+}
 .logpage-header {
   border-bottom: 1px solid #f3f3f3;
   padding: 1rem 0;
@@ -178,5 +167,29 @@ body {
     position: absolute;
     left: -130px;
     top: 2px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+  a:hover {
+    color: #747bff;
+  }
+
+  .logpage-body .logpage-logtitle .logpage-date {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .logpage-header .logpage-title a {
+    color: #fff;
+  }
+  .logpage-header .logpage-website a {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .logpage-header {
+    border-bottom: 1px solid #424242;
   }
 }
