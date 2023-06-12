@@ -11,15 +11,9 @@ dependencies:
   github-markdown-css:
     specifier: ^5.2.0
     version: 5.2.0
-  marked3:
-    specifier: ^0.5.2
-    version: 0.5.2
-  md:
-    specifier: ^0.6.0
-    version: 0.6.0
-  yaml:
-    specifier: ^2.3.1
-    version: 2.3.1
+  marked:
+    specifier: ^5.1.0
+    version: 5.1.0
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte':
@@ -28,6 +22,9 @@ devDependencies:
   '@tsconfig/svelte':
     specifier: ^4.0.1
     version: 4.0.1
+  '@types/marked':
+    specifier: ^5.0.0
+    version: 5.0.0
   svelte:
     specifier: ^3.58.0
     version: 3.58.0
@@ -315,6 +312,10 @@ packages:
     resolution: {integrity: sha512-B+XlGpmuAQzJqDoBATNCvEPqQg0HkO7S8pM14QDI5NsmtymzRexQ1N+nX2H6RTtFbuFgaZD4I8AAi8voGg0GLg==}
     dev: true
 
+  /@types/marked@5.0.0:
+    resolution: {integrity: sha512-YcZe50jhltsCq7rc9MNZC/4QB/OnA2Pd6hrOSTOFajtabN+38slqgDDCeE/0F83SjkKBQcsZUj7VLWR0H5cKRA==}
+    dev: true
+
   /@types/pug@2.0.6:
     resolution: {integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg==}
     dev: true
@@ -565,16 +566,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /marked3@0.5.2:
-    resolution: {integrity: sha512-OvTDW52e3aIdvXlfOXDqUSi/8fCZvB1RjMzntk4UyRCrrbg3DYX6UWtnjJqOBeRuQETp0Lm9s33On3goO7k6sw==}
-    dependencies:
-      slugo: 0.2.3
-    dev: false
-
-  /md@0.6.0:
-    resolution: {integrity: sha512-dg63h89eAeNtubkGRLQ3/mkwis8Ye7uyZ7U0sMxFYx00231VKIb09PfoEH/Gdd2NIc+iSTDYCforOmT08JHsOA==}
-    dependencies:
-      slugo: 0.2.3
+  /marked@5.1.0:
+    resolution: {integrity: sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==}
+    engines: {node: '>= 18'}
+    hasBin: true
     dev: false
 
   /merge2@1.4.1:
@@ -729,10 +724,6 @@ packages:
       mkdirp: 0.5.6
       rimraf: 2.7.1
     dev: true
-
-  /slugo@0.2.3:
-    resolution: {integrity: sha512-4nav6mk321IWKaWxgvygjp2JB0d5sNGgkPUJ+EGQZmmcvuXS+4DwdhhPa9L8WBg6fVQDID3PO+t6wYM1NqVbkA==}
-    dev: false
 
   /sorcery@0.11.0:
     resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
@@ -913,8 +904,3 @@ packages:
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
-
-  /yaml@2.3.1:
-    resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
-    engines: {node: '>= 14'}
-    dev: false
