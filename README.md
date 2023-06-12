@@ -38,6 +38,10 @@ new LogPage({
 });
 ```
 
+## Config
+
+- `showHeader` (boolean): Show the header or not
+
 ## Changelog Format
 
 ### Example

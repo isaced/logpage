@@ -22,7 +22,7 @@ body {
 .container {
   max-width: 560px;
   margin: auto;
-  padding: 0 10px;
+  padding: 0 1.3rem;
 }
 
 .clearfix {
@@ -73,6 +73,7 @@ body {
 .logpage-header {
   border-bottom: 1px solid #f3f3f3;
   padding: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .logpage-header .logpage-title {
@@ -104,7 +105,7 @@ body {
 }
 
 .logpage-body {
-  padding: 3rem 0 5rem;
+  padding: 0 0 5rem;
 }
 
 .logpage-body,
@@ -113,7 +114,7 @@ body {
 }
 
 .logpage-body .logpage-sep {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .logpage-body h1 {
