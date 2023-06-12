@@ -4,6 +4,8 @@ Helps you quickly deploy a live updated Changelog page based on a `CHANGELOG.md`
 
 <img src="https://i.loli.net/2017/07/27/597995184bb02.png" width="800" alt="preview">
 
+Live Demo: https://logp.netlify.app
+
 ## Usage
 
 You can simply create an `index.html` and include `logpage` there:
