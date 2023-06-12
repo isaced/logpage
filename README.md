@@ -1,4 +1,4 @@
-# LogPage [![NPM version](https://img.shields.io/npm/v/logpage.svg?style=flat)](https://npmjs.com/package/logpage) [![NPM downloads](https://img.shields.io/npm/dm/logpage.svg?style=flat)](https://npmjs.com/package/loglive)
+# LogPage [![NPM version](https://img.shields.io/npm/v/logpage.svg?style=flat)](https://npmjs.com/package/logpage)
 
 Helps you quickly deploy a live updated Changelog page based on a `CHANGELOG.md` file, inspired by [headwayapp.co](https://headwayapp.co/), [LogLive](https://github.com/egoist/loglive).
 
